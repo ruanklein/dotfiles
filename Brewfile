@@ -89,6 +89,8 @@ brew "vscode-langservers-extracted"
 brew "goimports"
 # Language server for the Go language
 brew "gopls"
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
 # Local inference and LoRA training CLI for Draw Things
 brew "drawthingsai/draw-things/draw-things-cli", trusted: true
 # Text-Driven Audio Sequencer for Brainwave Entrainment

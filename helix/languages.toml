@@ -19,6 +19,9 @@ args = ["--stdio"]
 command = "vscode-css-language-server"
 args = ["--stdio"]
 
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
 [[language]]
 name = "python"
 language-servers = ["basedpyright"]
@@ -46,3 +49,7 @@ language-servers = ["vscode-html-language-server"]
 [[language]]
 name = "css"
 language-servers = ["vscode-css-language-server"]
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
