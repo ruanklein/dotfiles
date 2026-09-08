@@ -1,3 +1,32 @@
 [user]
 	name = Ruan
 	email = ruan.klein@gmail.com
+
+[core]
+	editor = hx
+
+[fetch]
+	prune = true
+
+[push]
+	autoSetupRemote = true
+
+[pull]
+	rebase = true
+
+[rebase]
+	autoStash = true
+	updateRefs = true
+
+[rerere]
+	enabled = true
+
+[merge]
+	conflictstyle = zdiff3
+
+[diff]
+	algorithm = histogram
+	colorMoved = zebra
+
+[commit]
+	verbose = true
