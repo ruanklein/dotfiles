@@ -1,8 +1,6 @@
 tap "drawthingsai/draw-things"
 tap "synapseq-foundation/synapseq", trusted: true
 
-# Terminal emulator as alternative to Apple's Terminal app
-brew "iterm2"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -95,6 +93,8 @@ brew "rust-analyzer"
 brew "drawthingsai/draw-things/draw-things-cli", trusted: true
 # Text-Driven Audio Sequencer for Brainwave Entrainment
 brew "synapseq-foundation/synapseq/synapseq"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
 # Multi-track audio editor and recorder
 cask "audacity"
 # Menu bar usage monitor for Codex and Claude
