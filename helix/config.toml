@@ -15,11 +15,12 @@ insert = "bar"
 select = "block"
 
 [keys.normal]
-# Select the complete line first so these work without a prior selection.
-"S-A-up" = ["extend_line", "copy_selection_on_prev_line"]
-"S-A-down" = ["extend_line", "copy_selection_on_next_line"]
-"A-up" = ["extend_line", "move_line_up"]
-"A-down" = ["extend_line", "move_line_down"]
+# Duplicate through the yank register and restore the original cursor position.
+"S-A-up" = ["save_selection", "extend_to_line_bounds", "yank", "paste_before", "jump_backward"]
+"S-A-down" = ["save_selection", "extend_to_line_bounds", "yank", "paste_after", "jump_backward"]
+# Helix has no native line-swap command; this swaps a line through its register.
+"A-up" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+"A-down" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 
 [editor.file-picker]
 hidden = false
