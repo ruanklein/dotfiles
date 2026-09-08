@@ -5,6 +5,9 @@ mouse = true
 line-number = "absolute"
 cursorline = true
 bufferline = "multiple"
+auto-completion = true
+auto-info = true
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 normal = "underline"
@@ -12,8 +15,14 @@ insert = "bar"
 select = "block"
 
 [keys.normal]
-"S-A-up" = "copy_selection_on_prev_line"
-"S-A-down" = "copy_selection_on_next_line"
+# Select the complete line first so these work without a prior selection.
+"S-A-up" = ["extend_line", "copy_selection_on_prev_line"]
+"S-A-down" = ["extend_line", "copy_selection_on_next_line"]
+"A-up" = ["extend_line", "move_line_up"]
+"A-down" = ["extend_line", "move_line_down"]
 
 [editor.file-picker]
 hidden = false
+
+[editor.indent-guides]
+render = true
