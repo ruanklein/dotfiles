@@ -8,6 +8,7 @@ Personal macOS development environment configuration.
 - `git/gitconfig`: Git configuration.
 - `helix/config.toml`: Helix editor configuration.
 - `fonts/`: MonacoFiraNerd font files for terminal use.
+- `iterm2/com.googlecode.iterm2.plist`: iTerm2 profiles and preferences.
 - `shell/zshrc`: Zsh and Oh My Zsh configuration.
 - `shell/themes/goroutine.zsh-theme`: Custom Oh My Zsh theme.
 
@@ -36,6 +37,15 @@ Install the terminal font before configuring the custom Zsh theme:
 ```sh
 cp "$PWD/fonts/"*.ttf "$HOME/Library/Fonts/"
 ```
+
+Configure iTerm2 to load its preferences from the repository:
+
+1. Open **Settings > General > Preferences**.
+2. Enable **Load settings from a custom folder or URL** and select `$PWD/iterm2`.
+3. Enable **Save changes to folder when iTerm2 quits**.
+4. Restart iTerm2.
+
+Do not use **Import All Settings and Data** or **Restore Window Arrangement**.
 
 Open a new Zsh session once to install Oh My Zsh automatically. Then link the
 custom theme and reload Zsh:
