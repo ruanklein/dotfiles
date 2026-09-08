@@ -7,6 +7,7 @@ Personal macOS development environment configuration.
 - `Brewfile`: Homebrew formulae, casks, and taps.
 - `git/gitconfig`: Git configuration.
 - `helix/config.toml`: Helix editor configuration.
+- `fonts/`: MonacoFiraNerd font files for terminal use.
 - `shell/zshrc`: Zsh and Oh My Zsh configuration.
 - `shell/themes/goroutine.zsh-theme`: Custom Oh My Zsh theme.
 
@@ -28,6 +29,12 @@ mkdir -p "$HOME/.config/helix"
 ln -s "$PWD/shell/zshrc" "$HOME/.zshrc"
 ln -s "$PWD/git/gitconfig" "$HOME/.gitconfig"
 ln -s "$PWD/helix/config.toml" "$HOME/.config/helix/config.toml"
+```
+
+Install the terminal font before configuring the custom Zsh theme:
+
+```sh
+cp "$PWD/fonts/"*.ttf "$HOME/Library/Fonts/"
 ```
 
 Open a new Zsh session once to install Oh My Zsh automatically. Then link the
