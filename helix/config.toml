@@ -1,0 +1,19 @@
+theme = "base16_transparent"
+
+[editor]
+mouse = true
+line-number = "absolute"
+cursorline = true
+bufferline = "multiple"
+
+[editor.cursor-shape]
+normal = "underline"
+insert = "bar"
+select = "block"
+
+[keys.normal]
+"S-A-up" = "copy_selection_on_prev_line"
+"S-A-down" = "copy_selection_on_next_line"
+
+[editor.file-picker]
+hidden = false

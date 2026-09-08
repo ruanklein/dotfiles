@@ -1,0 +1,68 @@
+export ZSH="$HOME/.oh-my-zsh"
+export EDITOR=hx
+export ARCHFLAGS="-arch $(uname -m)"
+export GOPATH=~/go
+
+export PATH=~/.local/bin:$PATH
+export PATH=~/go/bin:$PATH
+export PATH=~/.lmstudio/bin:$PATH
+
+ZSH_THEME="goroutine" # shell/themes/goroutine.zsh-theme
+plugins=(
+  git
+  gitignore
+  git-prompt
+  golang
+  iterm2
+  aws
+  macos
+  npm
+  battery
+  brew
+  gh
+  pass
+  pip
+  pod
+  rust
+  sudo
+  xcode
+  yarn
+  genpass
+)
+
+if [[ ! -d "$ZSH" ]]; then
+  print -P "%F{33}Installing Oh My Zsh...%f"
+  command -v curl >/dev/null || {
+    print -P "%F{160}curl is required to install Oh My Zsh.%f"
+    return 1
+  }
+
+  RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+source $ZSH/oh-my-zsh.sh
+
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -f ~/.zshrc_private && source ~/.zshrc_private
