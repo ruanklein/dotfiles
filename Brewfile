@@ -43,6 +43,8 @@ brew "imagemagick"
 brew "lazygit"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
 # Language Server Protocol for Markdown
 brew "marksman"
 # Deep clean and optimize your Mac
