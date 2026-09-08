@@ -77,6 +77,18 @@ brew "wget"
 brew "xcodegen"
 # JavaScript package manager
 brew "yarn"
+# Pyright fork with various improvements and built-in pylance features
+brew "basedpyright"
+# Language for application scale JavaScript development
+brew "typescript"
+# Language Server Protocol implementation for TypeScript wrapping tsserver
+brew "typescript-language-server"
+# Language servers for HTML, CSS, JavaScript, and JSON extracted from vscode
+brew "vscode-langservers-extracted"
+# Go formatter that additionally inserts import statements
+brew "goimports"
+# Language server for the Go language
+brew "gopls"
 # Local inference and LoRA training CLI for Draw Things
 brew "drawthingsai/draw-things/draw-things-cli", trusted: true
 # Text-Driven Audio Sequencer for Brainwave Entrainment
