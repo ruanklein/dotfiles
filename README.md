@@ -47,15 +47,7 @@ Configure iTerm2 to load its preferences from the repository:
 
 Do not use **Import All Settings and Data** or **Restore Window Arrangement**.
 
-Open a new Zsh session once to install Oh My Zsh automatically. Then link the
-custom theme and reload Zsh:
-
-```sh
-mkdir -p "$HOME/.oh-my-zsh/custom/themes"
-ln -s "$PWD/shell/themes/goroutine.zsh-theme" \
-  "$HOME/.oh-my-zsh/custom/themes/goroutine.zsh-theme"
-exec zsh
-```
+## Packages
 
 Install the Homebrew dependencies:
 
