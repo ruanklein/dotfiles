@@ -7,7 +7,7 @@ export PATH=~/.local/bin:$PATH
 export PATH=~/go/bin:$PATH
 export PATH=~/.lmstudio/bin:$PATH
 
-ZSH_THEME="goroutine" # shell/themes/goroutine.zsh-theme
+ZSH_THEME="amuse"
 plugins=(
   git
   gitignore
