@@ -22,6 +22,9 @@ select = "block"
 "A-up" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 "A-down" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 
+[keys.normal.space.g]
+b = ':echo %sh{~/.config/helix/scripts/git-line-blame "%{buffer_name}" "%{cursor_line}"}'
+
 [editor.file-picker]
 hidden = false
 

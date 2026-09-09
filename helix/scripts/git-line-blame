@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+file="$1"
+line="$2"
+
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "Not inside a Git repository"
+    exit 0
+fi
+
+hash="$(
+    git blame \
+        -L "${line},${line}" \
+        --porcelain \
+        -- "$file" 2>/dev/null |
+    head -n 1 |
+    awk '{print $1}'
+)"
+
+if [[ -z "$hash" ]]; then
+    echo "No Git information"
+    exit 0
+fi
+
+if [[ "$hash" =~ ^0+$ ]]; then
+    echo "Uncommitted • working tree"
+    exit 0
+fi
+
+git show \
+    -s \
+    --format='%an • %ar • %h • %s' \
+    "$hash"
