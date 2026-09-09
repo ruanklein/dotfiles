@@ -10,7 +10,6 @@ Personal macOS development environment configuration.
 - `fonts/`: MonacoFiraNerd font files for terminal use.
 - `iterm2/com.googlecode.iterm2.plist`: iTerm2 profiles and preferences.
 - `shell/zshrc`: Zsh and Oh My Zsh configuration.
-- `shell/themes/goroutine.zsh-theme`: Custom Oh My Zsh theme.
 
 ## Installation
 
