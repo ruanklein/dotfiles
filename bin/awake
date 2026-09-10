@@ -1,0 +1,148 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ -t 1 && -z "${NO_COLOR:-}" ]]; then
+    blue=$'\033[1;34m'
+    green=$'\033[1;32m'
+    yellow=$'\033[1;33m'
+    reset=$'\033[0m'
+else
+    blue=""
+    green=""
+    yellow=""
+    reset=""
+fi
+
+usage() {
+    printf '%s\n' \
+        "Usage: awake <command> [arguments]" \
+        "" \
+        "Commands:" \
+        "  focus [duration]          Keep the display and system idle sleep awake." \
+        "  presentation [duration]   Keep display, disk, and system awake on AC power." \
+        "  download [duration]       Keep the system awake while allowing display sleep." \
+        "  run -- <command> [args]   Keep the system awake while a command runs." \
+        "  wait <pid>                Keep the display and system awake until a PID exits." \
+        "  status                    Show active macOS power assertions." \
+        "  raw <caffeinate args>     Pass arguments directly to caffeinate." \
+        "" \
+        "Durations accept seconds, minutes, hours, or days: 90s, 25m, 1h, 1d." \
+        "Without a duration, a preset remains active until interrupted with Ctrl-C."
+}
+
+die() {
+    printf '%sawake:%s %s\n' "$yellow" "$reset" "$*" >&2
+    exit 1
+}
+
+require_caffeinate() {
+    [[ -x /usr/bin/caffeinate ]] || die "caffeinate is unavailable on this system"
+}
+
+parse_duration() {
+    local value unit multiplier
+
+    [[ "$1" =~ ^([0-9]+)([smhd]?)$ ]] || die "invalid duration: $1"
+
+    value="${BASH_REMATCH[1]}"
+    unit="${BASH_REMATCH[2]}"
+
+    while [[ "$value" == 0* ]]; do
+        value="${value#0}"
+    done
+    [[ -n "$value" ]] || die "duration must be greater than zero"
+
+    case "$unit" in
+        "" | s) multiplier=1 ;;
+        m) multiplier=60 ;;
+        h) multiplier=3600 ;;
+        d) multiplier=86400 ;;
+    esac
+
+    DURATION=$((10#$value * multiplier))
+}
+
+start_preset() {
+    local name description
+    local -a flags
+
+    name="$1"
+    description="$2"
+    shift 2
+    flags=("$@")
+
+    if [[ -n "${DURATION:-}" ]]; then
+        printf '%sawake:%s %s for %s%s%s\n' "$blue" "$reset" "$name" "$green" "$DURATION_LABEL" "$reset"
+        printf '  %s\n' "$description"
+        exec /usr/bin/caffeinate "${flags[@]}" -t "$DURATION"
+    fi
+
+    printf '%sawake:%s %s%s%s\n' "$blue" "$reset" "$green" "$name" "$reset"
+    printf '  %s Press Ctrl-C to stop.\n' "$description"
+    exec /usr/bin/caffeinate "${flags[@]}"
+}
+
+show_status() {
+    command -v pmset >/dev/null 2>&1 || die "pmset is unavailable on this system"
+    printf '%sawake:%s active power assertions\n' "$blue" "$reset"
+    pmset -g assertions
+}
+
+main() {
+    local command pid
+
+    command="${1:-help}"
+    shift || true
+
+    case "$command" in
+        help | -h | --help)
+            usage
+            ;;
+        focus | presentation | download)
+            require_caffeinate
+            [[ $# -le 1 ]] || die "$command accepts at most one duration"
+            DURATION=""
+            DURATION_LABEL=""
+            if [[ $# -eq 1 ]]; then
+                DURATION_LABEL="$1"
+                parse_duration "$1"
+            fi
+
+            case "$command" in
+                focus) start_preset "focus" "Display and idle sleep are disabled." -d -i ;;
+                presentation) start_preset "presentation" "Display, disk, and system sleep are disabled on AC power." -d -i -m -s ;;
+                download) start_preset "download" "Idle sleep is disabled; the display may sleep." -i ;;
+            esac
+            ;;
+        run)
+            require_caffeinate
+            [[ $# -ge 2 && "$1" == "--" ]] || die "usage: awake run -- <command> [args]"
+            shift
+            printf '%sawake:%s running %s%s%s\n' "$blue" "$reset" "$green" "$*" "$reset"
+            exec /usr/bin/caffeinate -i "$@"
+            ;;
+        wait)
+            require_caffeinate
+            [[ $# -eq 1 && "$1" =~ ^[1-9][0-9]*$ ]] || die "usage: awake wait <pid>"
+            pid="$1"
+            printf '%sawake:%s waiting for process %s%s%s\n' "$blue" "$reset" "$green" "$pid" "$reset"
+            exec /usr/bin/caffeinate -d -i -w "$pid"
+            ;;
+        status)
+            [[ $# -eq 0 ]] || die "status does not accept arguments"
+            show_status
+            ;;
+        raw)
+            require_caffeinate
+            [[ $# -gt 0 ]] || die "usage: awake raw <caffeinate args>"
+            printf '%sawake:%s forwarding arguments to caffeinate\n' "$blue" "$reset"
+            exec /usr/bin/caffeinate "$@"
+            ;;
+        *)
+            die "unknown command: $command (run 'awake --help' for usage)"
+            ;;
+    esac
+}
+
+main "$@"

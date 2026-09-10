@@ -5,6 +5,7 @@ Personal macOS development environment configuration.
 ## Contents
 
 - `Brewfile`: Homebrew formulae, casks, and taps.
+- `bin/awake`: Friendly wrapper for macOS `caffeinate`.
 - `git/gitconfig`: Git configuration.
 - `helix/config.toml`: Helix editor configuration.
 - `fonts/`: MonacoFiraNerd font files for terminal use.
@@ -24,11 +25,12 @@ Create symbolic links for the configuration files. Back up any existing files
 at these destinations before running the commands.
 
 ```sh
-mkdir -p "$HOME/.config/helix"
+mkdir -p "$HOME/.config/helix" "$HOME/.local/bin"
 
 ln -s "$PWD/shell/zshrc" "$HOME/.zshrc"
 ln -s "$PWD/git/gitconfig" "$HOME/.gitconfig"
 ln -s "$PWD/helix/config.toml" "$HOME/.config/helix/config.toml"
+ln -s "$PWD/bin/awake" "$HOME/.local/bin/awake"
 ```
 
 Install the terminal font before configuring the custom Zsh theme:
