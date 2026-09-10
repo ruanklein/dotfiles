@@ -64,5 +64,7 @@ zinit light-mode for \
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
+command -v container >/dev/null && eval "$(container --generate-completion-script zsh)"
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 test -f ~/.zshrc_private && source ~/.zshrc_private
