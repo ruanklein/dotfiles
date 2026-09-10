@@ -1,3 +1,4 @@
+tap "arthur-ficial/tap", "https://github.com/Arthur-Ficial/homebrew-tap", trusted: true
 tap "drawthingsai/draw-things"
 tap "synapseq-foundation/synapseq", trusted: true
 
@@ -95,6 +96,8 @@ brew "rust-analyzer"
 brew "drawthingsai/draw-things/draw-things-cli", trusted: true
 # Text-Driven Audio Sequencer for Brainwave Entrainment
 brew "synapseq-foundation/synapseq/synapseq"
+# Apple Intelligence from the command-line, with OpenAi-compatible API server
+brew "apfel"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Multi-track audio editor and recorder

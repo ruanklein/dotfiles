@@ -25,6 +25,11 @@ select = "block"
 [keys.normal.space.g]
 b = ':echo %sh{~/.config/helix/scripts/git-line-blame "%{buffer_name}" "%{cursor_line}"}'
 
+[keys.normal.space.a]
+s = ":pipe ~/.config/helix/scripts/ai-suggest"
+r = ":pipe ~/.config/helix/scripts/ai-refactor"
+f = ":pipe ~/.config/helix/scripts/ai-fix"
+
 [editor.file-picker]
 hidden = false
 

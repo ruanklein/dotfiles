@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if ! command -v apfel >/dev/null 2>&1; then
+    echo "apfel is not installed or not on PATH" >&2
+    exit 1
+fi
+
+selection="$(</dev/stdin)"
+
+if [[ -z "$selection" ]]; then
+    echo "Select code before requesting an AI fix" >&2
+    exit 1
+fi
+
+printf '%s' "$selection" | apfel \
+    --code \
+    --temperature 0.1 \
+    --max-tokens 2048 \
+    --system "You are a precise local coding assistant. Return only replacement source code, with no Markdown or explanation." \
+    "Fix bugs and likely edge cases in the selected code. Preserve its intended behavior, language, style, public API, and dependencies."
