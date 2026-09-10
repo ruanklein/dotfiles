@@ -53,3 +53,7 @@ language-servers = ["vscode-css-language-server"]
 [[language]]
 name = "rust"
 language-servers = ["rust-analyzer"]
+
+[[language]]
+name = "svelte"
+language-servers = ["svelteserver"]
