@@ -52,8 +52,6 @@ brew "marksman"
 brew "mole"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
-# AI coding agent, built for the terminal
-brew "opencode"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # CLI for Playwright: record/generate code, inspect selectors, take screenshots
@@ -100,6 +98,8 @@ brew "synapseq-foundation/synapseq/synapseq"
 brew "apfel"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Multi-track audio editor and recorder
 cask "audacity"
 # Menu bar usage monitor for Codex and Claude
