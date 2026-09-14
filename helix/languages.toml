@@ -22,6 +22,10 @@ args = ["--stdio"]
 [language-server.rust-analyzer]
 command = "rust-analyzer"
 
+[language-server.synapseq]
+command = "synapseq"
+args = ["-lsp"]
+
 [[language]]
 name = "python"
 language-servers = ["basedpyright"]
@@ -57,3 +61,12 @@ language-servers = ["rust-analyzer"]
 [[language]]
 name = "svelte"
 language-servers = ["svelteserver"]
+
+[[language]]
+name = "spsq"
+language-id = "spsq"
+scope = "source.spsq"
+file-types = ["spsq", "spsc"]
+comment-tokens = "#"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["synapseq"]
