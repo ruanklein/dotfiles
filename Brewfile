@@ -1,6 +1,7 @@
 tap "arthur-ficial/tap", "https://github.com/Arthur-Ficial/homebrew-tap", trusted: true
 tap "drawthingsai/draw-things"
 tap "synapseq-foundation/synapseq", trusted: true
+tap "eugenioenko/ttt", trusted: true
 
 # Automatic configure script builder
 brew "autoconf"
@@ -34,6 +35,8 @@ brew "gnupg"
 brew "grip"
 # Post-modern modal text editor
 brew "helix"
+# Terminal text editor
+brew "ttt"
 # Improved top (interactive process viewer)
 brew "htop"
 # Generic library support script

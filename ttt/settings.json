@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "theme": "virtru-dark",
+  "editor": {
+    "tabSize": 4,
+    "insertSpaces": true,
+    "wordWrap": false,
+    "diffMode": "split",
+    "diffContext": "changes",
+    "diffWordWrap": false,
+    "lineNumbers": true,
+    "formatOnSave": true,
+    "insertFinalNewline": true,
+    "trimTrailingWhitespace": false,
+    "focusOnOpen": false,
+    "syntaxHighlight": true,
+    "gitGutter": true,
+    "autoDedent": true,
+    "autoIndent": true,
+    "gutterStyle": "compact",
+    "borderStyle": "rounded",
+    "bracketPairColorization": true,
+    "showTrailingNewline": true,
+    "menuBar": true,
+    "transparentBackground": true
+  },
+  "search": {
+    "debounce": 350
+  },
+  "explorer": {
+    "showHidden": true,
+    "showGitIgnored": true
+  },
+  "sidebar": {
+    "width": 45
+  },
+  "git": {
+    "fileView": "list"
+  },
+  "terminal": {
+    "scrollback": 1000
+  },
+  "lsp": {
+    "servers": {
+      "bash": {
+        "command": [
+          "bash-language-server",
+          "start"
+        ],
+        "languages": {
+          ".bash": "bash",
+          ".sh": "sh"
+        }
+      },
+      "css": {
+        "command": [
+          "vscode-css-language-server",
+          "--stdio"
+        ],
+        "languages": {
+          ".css": "css",
+          ".less": "less",
+          ".scss": "scss"
+        }
+      },
+      "go": {
+        "command": [
+          "gopls"
+        ]
+      },
+      "markdown": {
+        "command": [
+          "marksman",
+          "server"
+        ]
+      },
+      "python": {
+        "command": [
+          "pyright-langserver",
+          "--stdio"
+        ]
+      },
+      "typescript": {
+        "command": [
+          "typescript-language-server",
+          "--stdio"
+        ],
+        "languages": {
+          ".cjs": "javascript",
+          ".cts": "typescript",
+          ".js": "javascript",
+          ".jsx": "javascriptreact",
+          ".mjs": "javascript",
+          ".mts": "typescript",
+          ".ts": "typescript",
+          ".tsx": "typescriptreact"
+        }
+      }
+    },
+    "saveOnRename": false,
+    "hoverDelay": 500
+  },
+  "autocomplete": {
+    "enabled": true,
+    "autoSuggest": true,
+    "debounce": 150,
+    "signatureHelp": true
+  },
+  "markdown": {
+    "wrapWidth": 80
+  },
+  "plugins": {
+    "enabled": true
+  },
+  "formatters": {
+    "go": "gofmt"
+  }
+}
