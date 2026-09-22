@@ -66,7 +66,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 command -v container >/dev/null && eval "$(container --generate-completion-script zsh)"
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+test -f ~/.p10k.zsh && source ~/.p10k.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 test -f ~/.zshrc_private && source ~/.zshrc_private
 
