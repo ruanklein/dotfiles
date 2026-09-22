@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+    printf '%s\n' \
+        'Usage: hxai <instruction>' \
+        '' \
+        'Read selected text from stdin and return the Apple Intelligence response.' \
+        '' \
+        'Example:' \
+        '  :pipe hxai "Refactor this code while preserving its public API"'
+}
+
+die() {
+    printf 'hxai: %s\n' "$*" >&2
+    exit 1
+}
+
+main() {
+    local instruction
+
+    if [[ $# -eq 0 || "$1" == '-h' || "$1" == '--help' ]]; then
+        usage
+        [[ $# -gt 0 ]] || exit 1
+        exit 0
+    fi
+
+    instruction="$*"
+
+    command -v fm >/dev/null 2>&1 || die 'fm is not installed or not on PATH'
+
+    exec fm respond \
+        --no-stream \
+        --greedy \
+        --instructions "$instruction"
+}
+
+main "$@"

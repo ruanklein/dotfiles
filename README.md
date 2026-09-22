@@ -6,6 +6,7 @@ Personal macOS development environment configuration.
 
 - `Brewfile`: Homebrew formulae, casks, and taps.
 - `bin/awake`: Friendly wrapper for macOS `caffeinate`.
+- `bin/hxai`: Sends Helix selections to Apple Intelligence through `fm`.
 - `git/gitconfig`: Git configuration.
 - `helix/config.toml`: Helix editor configuration.
 - `fonts/`: MonacoFiraNerd font files for terminal use.
@@ -33,6 +34,16 @@ ln -s "$PWD/shell/zshrc" "$HOME/.zshrc"
 ln -s "$PWD/git/gitconfig" "$HOME/.gitconfig"
 ln -s "$PWD/helix/config.toml" "$HOME/.config/helix/config.toml"
 ln -s "$PWD/bin/awake" "$HOME/.local/bin/awake"
+ln -s "$PWD/bin/hxai" "$HOME/.local/bin/hxai"
+```
+
+With a selection active in Helix, use `:pipe` with an instruction for Apple
+Intelligence. The selected text is read from stdin and the generated response
+is written back to Helix:
+
+```text
+:pipe hxai "Refactor this code while preserving its public API"
+:pipe hxai "Fix bugs and return only replacement source code"
 ```
 
 Install the terminal font before configuring the custom Zsh theme:
