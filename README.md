@@ -31,6 +31,7 @@ mkdir -p "$HOME/.config/helix" "$HOME/.local/bin"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
 ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ln -s "$PWD/shell/zshrc" "$HOME/.zshrc"
+ln -s "$PWD/shell/p10k.zsh" "$HOME/.p10k.zsh"
 ln -s "$PWD/git/gitconfig" "$HOME/.gitconfig"
 ln -s "$PWD/helix/config.toml" "$HOME/.config/helix/config.toml"
 ln -s "$PWD/bin/awake" "$HOME/.local/bin/awake"
