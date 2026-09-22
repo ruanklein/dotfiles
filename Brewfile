@@ -1,7 +1,5 @@
-tap "arthur-ficial/tap", "https://github.com/Arthur-Ficial/homebrew-tap", trusted: true
 tap "drawthingsai/draw-things"
 tap "synapseq-foundation/synapseq", trusted: true
-tap "eugenioenko/ttt", trusted: true
 
 # Automatic configure script builder
 brew "autoconf"
@@ -35,8 +33,6 @@ brew "gnupg"
 brew "grip"
 # Post-modern modal text editor
 brew "helix"
-# Terminal text editor
-brew "ttt"
 # Improved top (interactive process viewer)
 brew "htop"
 # Generic library support script
@@ -47,8 +43,6 @@ brew "imagemagick"
 brew "lazygit"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
-# Blazing fast terminal file manager written in Rust, based on async I/O
-brew "yazi"
 # Language Server Protocol for Markdown
 brew "marksman"
 # Deep clean and optimize your Mac
@@ -97,8 +91,6 @@ brew "rust-analyzer"
 brew "drawthingsai/draw-things/draw-things-cli", trusted: true
 # Text-Driven Audio Sequencer for Brainwave Entrainment
 brew "synapseq-foundation/synapseq/synapseq"
-# Apple Intelligence from the command-line, with OpenAi-compatible API server
-brew "apfel"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # OpenAI's coding agent that runs in your terminal
@@ -109,8 +101,6 @@ cask "audacity"
 cask "codexbar"
 # Web browser
 cask "google-chrome"
-# Discover, download, and run local LLMs
-cask "lm-studio"
 # VPN client for secure internet access and private browsing
 cask "nordvpn"
 # Real-time strategy game engine for Westwood games

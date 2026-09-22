@@ -7,7 +7,7 @@ export PATH=~/.local/bin:$PATH
 export PATH=~/go/bin:$PATH
 export PATH=~/.lmstudio/bin:$PATH
 
-ZSH_THEME="amuse"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   gitignore
@@ -66,5 +66,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 command -v container >/dev/null && eval "$(container --generate-completion-script zsh)"
 
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 test -f ~/.zshrc_private && source ~/.zshrc_private
+
