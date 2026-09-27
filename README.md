@@ -4,6 +4,7 @@ Personal macOS development environment configuration.
 
 ## Contents
 
+- `.agents/skills/`: Coding guidelines for AI agents.
 - `Brewfile`: Homebrew formulae, casks, and taps.
 - `bin/awake`: Friendly wrapper for macOS `caffeinate`.
 - `bin/hxai`: Sends Helix selections to Apple Intelligence through `fm`.
@@ -36,6 +37,13 @@ ln -s "$PWD/git/gitconfig" "$HOME/.gitconfig"
 ln -s "$PWD/helix/config.toml" "$HOME/.config/helix/config.toml"
 ln -s "$PWD/bin/awake" "$HOME/.local/bin/awake"
 ln -s "$PWD/bin/hxai" "$HOME/.local/bin/hxai"
+```
+
+Install the coding style skill globally for Codex:
+
+```sh
+npx skills add ruanklein/dotfiles \
+  --skill clean-direct-code --global --agent codex
 ```
 
 With a selection active in Helix, use `:pipe` with an instruction for Apple
