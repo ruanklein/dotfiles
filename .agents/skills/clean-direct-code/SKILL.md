@@ -157,6 +157,10 @@ Prefer the concrete implementation until actual variation, reuse, isolation, or 
 - **Lookup Table / Object Literal Pattern:** For straightforward mappings from known keys to fixed results, use a lookup table such as an object literal, dictionary, or map instead of nested ternaries or repetitive conditional branches. Use `if`/`else`, `switch`, or `match` when the decision depends on predicates, precedence, validation, or computation rather than a direct mapping.
 - **Early Return / Guard Clause:** Check invalid inputs, unmet preconditions, and exceptional cases early, then return, throw, or continue as appropriate so the normal path stays clear and shallow. Use the language's idiom, such as `guard` or an early `return`. Do not force this pattern when cleanup, resource management, or clearer control flow requires another structure.
 
+### Single-Pass Collection Transformations
+
+When a collection needs both filtering and mapping, combine them into one `for` loop instead of chaining `.filter()` and `.map()` passes in either order. Start with an empty array, push only the transformed elements that satisfy the filter, and preserve the original evaluation order and behavior. When the result is needed inline in an initializer, use an anonymous immediately invoked function (IIFE) to create and return the array; wrap that array in the desired collection type, such as a `Set`, when needed.
+
 - Prefer clear language and standard-library features over custom helpers.
 - Avoid nested or chained ternary expressions when they encode several cases or make the branching hard to scan. Prefer `if`/`else`, `switch`, or `match` when that makes the decision structure clearer. Reserve ternaries for short, obvious binary choices.
 - Keep data transformations visible unless a pipeline is genuinely clearer.
@@ -193,9 +197,10 @@ Before finishing, inspect the diff and ask:
 6. Can any pass-through layer be removed?
 7. Did speculative flexibility enter the design?
 8. Are fixed key-to-result mappings expressed as lookup tables when appropriate, and are exceptional paths handled with early returns or guard clauses when appropriate?
-9. Are ternary expressions limited to short, obvious binary choices, with multi-case branching expressed clearly?
-10. Is there a shorter implementation that remains equally clear and correct?
-11. Did the change stay within the requested scope?
-12. Are all new or modified identifiers and technical comments written in clear English?
+9. Can a chained filter/map transformation be handled in one loop with an array accumulator while preserving its behavior?
+10. Are ternary expressions limited to short, obvious binary choices, with multi-case branching expressed clearly?
+11. Is there a shorter implementation that remains equally clear and correct?
+12. Did the change stay within the requested scope?
+13. Are all new or modified identifiers and technical comments written in clear English?
 
 Simplify when the answer exposes unnecessary code. Improve structure when responsibilities are mixed or the reading order obscures how the code works. Keep simple things simple and distinct responsibilities distinct. Do not sacrifice correctness, useful contracts, or maintainability merely to reduce line count or file count.
