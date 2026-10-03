@@ -19,6 +19,8 @@ brew "bat"
 brew "ripgrep"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Development kit for the Java programming language
+brew "java"
 # Create and run Linux containers using lightweight virtual machines
 brew "container"
 # Disk Usage/Free Utility - a better 'df' alternative
