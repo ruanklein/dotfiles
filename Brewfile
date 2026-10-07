@@ -59,6 +59,8 @@ brew "playwright-cli"
 brew "rtk"
 # Safe, concurrent, practical language
 brew "rust"
+# AI coding agent, built for the terminal
+brew "opencode"
 # SOund eXchange: universal sound sample translator
 brew "sox"
 # Play, record, convert, and stream select audio and video codecs
