@@ -97,8 +97,6 @@ brew "drawthingsai/draw-things/draw-things-cli", trusted: true
 brew "synapseq-foundation/synapseq/synapseq"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
 # Multi-track audio editor and recorder
 cask "audacity"
 # Menu bar usage monitor for Codex and Claude
