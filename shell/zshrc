@@ -66,9 +66,13 @@ zinit light-mode for \
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+zstyle ':completion:*' menu select
+
 command -v container >/dev/null && eval "$(container --generate-completion-script zsh)"
 
 test -f ~/.p10k.zsh && source ~/.p10k.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 test -f ~/.zshrc_private && source ~/.zshrc_private
+
 
