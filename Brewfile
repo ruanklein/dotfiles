@@ -1,4 +1,3 @@
-tap "drawthingsai/draw-things"
 tap "synapseq-foundation/synapseq", trusted: true
 
 # Automatic configure script builder
@@ -59,8 +58,8 @@ brew "playwright-cli"
 brew "rtk"
 # Safe, concurrent, practical language
 brew "rust"
-# AI coding agent, built for the terminal
-brew "opencode"
+# OpenAI's coding agent that runs in your terminal
+brew "codex"
 # SOund eXchange: universal sound sample translator
 brew "sox"
 # Play, record, convert, and stream select audio and video codecs
@@ -91,8 +90,6 @@ brew "goimports"
 brew "gopls"
 # Experimental Rust compiler front-end for IDEs
 brew "rust-analyzer"
-# Local inference and LoRA training CLI for Draw Things
-brew "drawthingsai/draw-things/draw-things-cli", trusted: true
 # Text-Driven Audio Sequencer for Brainwave Entrainment
 brew "synapseq-foundation/synapseq/synapseq"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -101,6 +98,8 @@ cask "iterm2"
 cask "audacity"
 # Menu bar usage monitor for Codex and Claude
 cask "codexbar"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Web browser
 cask "google-chrome"
 # VPN client for secure internet access and private browsing
