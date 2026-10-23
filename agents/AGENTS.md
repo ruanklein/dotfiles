@@ -4,7 +4,11 @@
 
 @RTK.md
 
-## Containers — Apple Container, not Docker
+## Agent Orchestration Policy
+
+@ORCHESTRATION.md
+
+## Containers
 
 This machine (Apple silicon, macOS 26+) does **not** use Docker, Colima, Lima, or Podman.
 Linux containers run through **Apple Container** (`container` CLI).
