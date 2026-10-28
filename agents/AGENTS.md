@@ -2,11 +2,11 @@
 
 ## Command output (RTK)
 
-@RTK.md
+Codex: read `~/.codex/RTK.md`. Claude: read `~/.claude/RTK.md`.
 
 ## Agent Orchestration Policy
 
-@ORCHESTRATION.md
+Codex: read `~/.codex/ORCHESTRATION.md`. Claude: read `~/.claude/ORCHESTRATION.md`.
 
 ## Containers
 
@@ -20,5 +20,5 @@ Linux containers run through **Apple Container** (`container` CLI).
 
 ## Custom instructions
 
-Read if file exists:
-@CUSTOM.md
+Read if file exists.
+Codex: read `~/.codex/CUSTOM.md`. Claude: read `~/.claude/CUSTOM.md`.
