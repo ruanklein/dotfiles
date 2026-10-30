@@ -94,6 +94,8 @@ brew "rust-analyzer"
 brew "synapseq-foundation/synapseq/synapseq"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Multi-track audio editor and recorder
 cask "audacity"
 # Menu bar usage monitor for Codex and Claude
