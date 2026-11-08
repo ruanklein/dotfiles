@@ -1,3 +1,4 @@
+tap "stablyai/orca", trusted: true
 tap "synapseq-foundation/synapseq", trusted: true
 
 # Automatic configure script builder
@@ -7,7 +8,7 @@ brew "automake"
 # Password manager
 brew "pass"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.14"
+brew "python@3.15"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Bourne-Again SHell, a UNIX command interpreter (5.x)
@@ -20,8 +21,6 @@ brew "ripgrep"
 brew "go"
 # Development kit for the Java programming language
 brew "java"
-# Create and run Linux containers using lightweight virtual machines
-brew "container"
 # Disk Usage/Free Utility - a better 'df' alternative
 brew "duf"
 # Like neofetch, but much faster because written mostly in C
@@ -30,8 +29,6 @@ brew "fastfetch"
 brew "gh"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
-# GitHub Markdown previewer
-brew "grip"
 # Post-modern modal text editor
 brew "helix"
 # Improved top (interactive process viewer)
@@ -42,8 +39,6 @@ brew "libtool"
 brew "imagemagick"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Clone of ls with colorful output, file type icons, and more
-brew "lsd"
 # Language Server Protocol for Markdown
 brew "marksman"
 # Deep clean and optimize your Mac
@@ -92,16 +87,20 @@ brew "gopls"
 brew "rust-analyzer"
 # Text-Driven Audio Sequencer for Brainwave Entrainment
 brew "synapseq-foundation/synapseq/synapseq"
+# Modern shell for the GitHub era
+brew "nushell"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Generator for LS_COLORS with support for multiple color themes
+brew "vivid"
+# Multi-platform software reverse engineering framework
+brew "ghidra"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Multi-track audio editor and recorder
 cask "audacity"
-# Menu bar usage monitor for Codex and Claude
-cask "codexbar"
-# OpenAI's official ChatGPT desktop app
-cask "chatgpt"
 # Web browser
 cask "google-chrome"
 # VPN client for secure internet access and private browsing
@@ -116,3 +115,5 @@ cask "steam"
 cask "transmission"
 # Virtual machines UI using QEMU
 cask "utm"
+# IDE for orchestrating AI coding agents across terminals and worktrees
+cask "stablyai/orca/orca"

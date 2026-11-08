@@ -9,9 +9,12 @@ Personal macOS development environment configuration.
 - `bin/hxai`: Sends Helix selections to Apple Intelligence through `fm`.
 - `git/gitconfig`: Git configuration.
 - `helix/config.toml`: Helix editor configuration.
+- `starship`: Starship shell configuration.
 - `fonts/`: MonacoFiraNerd font files for terminal use.
 - `iterm2/com.googlecode.iterm2.plist`: iTerm2 profiles and preferences.
 - `shell/zshrc`: Zsh and Oh My Zsh configuration.
+- `shell/p10k.zsh`: powerlevel10k configuration
+- `shell/config.nu`: nushell configuration
 
 ## Installation
 
@@ -37,7 +40,8 @@ ln -s "$PWD/helix/config.toml" "$HOME/.config/helix/config.toml"
 ln -s "$PWD/bin/awake" "$HOME/.local/bin/awake"
 ln -s "$PWD/bin/hxai" "$HOME/.local/bin/hxai"
 ln -s "$PWD/agents/AGENTS.md" "$HOME/.codex/AGENTS.md"
-ln -s "$PWD/agents/ORCHESTRATION.md" "$HOME/.codex/ORCHESTRATION.md"
+ln -s "$PWD/starship/starship.toml" "$HOME/.config/starship.toml"
+ln -s "$PWD/shell/config.nu" "$HOME/Library/Application Support/nushell/config.nu"
 ```
 
 With a selection active in Helix, use `:pipe` with an instruction for Apple
