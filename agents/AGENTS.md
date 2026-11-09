@@ -6,7 +6,8 @@ Codex: read `~/.codex/RTK.md`. Claude: read `~/.claude/RTK.md`.
 
 ## Shell (Nushell)
 
-Prefer Nushell for shell operations when available.
+The user's interactive shell is Nushell.
+For all user-facing shell commands and scripts, read and follow:
 Codex: read `~/.codex/NUSHELL.md`. Claude: read `~/.claude/NUSHELL.md`
 
 ## Custom instructions
