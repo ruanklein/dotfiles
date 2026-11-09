@@ -7,7 +7,7 @@ Codex: read `~/.codex/RTK.md`. Claude: read `~/.claude/RTK.md`.
 ## Shell (Nushell)
 
 Prefer Nushell for shell operations when available.
-Read `~/.config/agents/NUSHELL.md` if it exists.
+Codex: read `~/.codex/NUSHELL.md`. Claude: read `~/.claude/NUSHELL.md`
 
 ## Custom instructions
 
