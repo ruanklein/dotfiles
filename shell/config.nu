@@ -2,7 +2,6 @@ $env.config.show_banner = false
 $env.config.table.mode = 'rounded'
 $env.config.buffer_editor = "hx"
 
-$env.EDITOR = "hx"
 $env.LS_COLORS = (vivid generate ayu)
 
 alias nu-open = open
