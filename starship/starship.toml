@@ -66,3 +66,9 @@ format = "[$virtualenv]($style) "
 style = "bright-black"
 detect_extensions = []
 detect_files = []
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
