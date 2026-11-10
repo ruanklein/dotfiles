@@ -1127,7 +1127,7 @@
 			<key>Columns</key>
 			<integer>120</integer>
 			<key>Command</key>
-			<string>/opt/homebrew/bin/nu</string>
+			<string></string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1248,7 +1248,7 @@
 			<key>Cursor Type</key>
 			<integer>0</integer>
 			<key>Custom Command</key>
-			<string>Yes</string>
+			<string>No</string>
 			<key>Custom Directory</key>
 			<string>Recycle</string>
 			<key>Default Bookmark</key>

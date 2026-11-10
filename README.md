@@ -44,6 +44,26 @@ ln -s "$PWD/starship/starship.toml" "$HOME/.config/starship.toml"
 ln -s "$PWD/shell/config.nu" "$HOME/Library/Application Support/nushell/config.nu"
 ```
 
+In Nushell, configure the Starship autoload after linking `starship.toml`:
+
+```nu
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+```
+
+To make Nushell the default login shell, add its executable path to
+`/etc/shells` and pass the same path to `chsh`:
+
+```nu
+let nu_path = (which nu | get path.0)
+if not ((open /etc/shells | lines) | any {|line| $line == $nu_path }) {
+    $nu_path | sudo tee -a /etc/shells
+}
+chsh -s $nu_path
+```
+
+Start a new login session for the shell change to take effect.
+
 With a selection active in Helix, use `:pipe` with an instruction for Apple
 Intelligence. The selected text is read from stdin and the generated response
 is written back to Helix:
