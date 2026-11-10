@@ -12,8 +12,6 @@ Personal macOS development environment configuration.
 - `starship`: Starship shell configuration.
 - `fonts/`: MonacoFiraNerd font files for terminal use.
 - `iterm2/com.googlecode.iterm2.plist`: iTerm2 profiles and preferences.
-- `shell/zshrc`: Zsh and Oh My Zsh configuration.
-- `shell/p10k.zsh`: powerlevel10k configuration
 - `shell/config.nu`: nushell configuration
 
 ## Installation
@@ -31,10 +29,6 @@ at these destinations before running the commands.
 ```sh
 mkdir -p "$HOME/.config/helix" "$HOME/.local/bin"
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
-${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-ln -s "$PWD/shell/zshrc" "$HOME/.zshrc"
-ln -s "$PWD/shell/p10k.zsh" "$HOME/.p10k.zsh"
 ln -s "$PWD/git/gitconfig" "$HOME/.gitconfig"
 ln -s "$PWD/helix/config.toml" "$HOME/.config/helix/config.toml"
 ln -s "$PWD/bin/awake" "$HOME/.local/bin/awake"
@@ -73,7 +67,7 @@ is written back to Helix:
 :pipe hxai "Fix bugs and return only replacement source code"
 ```
 
-Install the terminal font before configuring the custom Zsh theme:
+Install the terminal font used by the iTerm2 profile:
 
 ```sh
 cp "$PWD/fonts/"*.ttf "$HOME/Library/Fonts/"
