@@ -19,7 +19,6 @@ $env.config.buffer_editor = "hx"
 
 $env.LS_COLORS = (vivid generate ayu)
 
-let custom_config = ($nu.config-path | path dirname | path join "custom.nu")
-if ($custom_config | path exists) {
-    source-env $custom_config
-}
+const custom_config = ($nu.config-path | path dirname | path join "custom.nu")
+const custom_config_to_load = if ($custom_config | path exists) { $custom_config } else { null }
+source-env $custom_config_to_load
