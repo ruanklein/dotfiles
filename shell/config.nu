@@ -18,3 +18,8 @@ $env.config.table.mode = 'rounded'
 $env.config.buffer_editor = "hx"
 
 $env.LS_COLORS = (vivid generate ayu)
+
+let custom_config = ($nu.config-path | path dirname | path join "custom.nu")
+if ($custom_config | path exists) {
+    source-env $custom_config
+}
